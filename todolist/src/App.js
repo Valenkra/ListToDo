@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react'
+import Titulo from './components/Titulo/Titulo';
+import AgregarElemento from './components/AgregarElemento/AgregarElemento';
 
 function App() {
+  const [ToDo, setToDo] = useState([]);
+
+console.log(ToDo);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Titulo sendText={"To Do"}></Titulo>
+        <AgregarElemento ToDo={ToDo} setTodo={setToDo}></AgregarElemento>
     </div>
   );
 }
